@@ -4,6 +4,7 @@ import requests
 app = Flask(__name__)
 
 # https://rapidapi.com/DataCrawler/api/skyscanner50/
+# https://helpdesk.privateinternetaccess.com/kb/articles/pia-desktop-command-line-interface-2
 
 
 @app.route('/')
