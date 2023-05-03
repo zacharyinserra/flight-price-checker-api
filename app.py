@@ -1,5 +1,5 @@
 from flask import Flask
-import requests
+import requests, os
 
 app = Flask(__name__)
 
@@ -21,10 +21,7 @@ def get_flight_details(origin, destination, depart_date, return_date):
 
     params = {"itineraryId": "<REQUIRED>", "legs": legs, "adults": "1", "currency": "USD", "countryCode": "US", "market": "en-US"}
 
-    headers = {
-        "X-RapidAPI-Key": "6185d6cba4msh09a56149d3c4699p197596jsn5363ddb90383",
-        "X-RapidAPI-Host": "skyscanner50.p.rapidapi.com"
-    }
+    headers = {"X-RapidAPI-Key": os.environ.get('X_RAPIDAPI_KEY'), "X-RapidAPI-Host": os.environ.get('X_RAPIDAPI_HOST')}
 
 
 if __name__ == '__main__':
